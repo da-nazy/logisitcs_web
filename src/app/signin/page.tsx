@@ -1,11 +1,11 @@
 import React from 'react';
 import { Mainwrapper } from '@/component/Wrapper';
-import { Signup } from '@/component/Page/auth';
+import { Signin } from '@/component/Page/auth';
 
-export default function Auth() {
+export default function Login() {
   return (
     <Mainwrapper>
-    <Signup/>
+    <Signin/>
     </Mainwrapper>
   )
 }

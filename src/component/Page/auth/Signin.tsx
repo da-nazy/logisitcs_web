@@ -4,7 +4,7 @@ import { makeStyles } from 'tss-react/mui';
 import { Authlayout } from './layout';
 import {Box,useTheme,Typography,TextField, Button,Switch, FormControlLabel} from '@mui/material';
 import { rem } from '@/utilities';
-export const SignUp=()=>{
+export const Signin=()=>{
     const theme=useTheme();
     const {classes}=useStyles();
     const label = { inputProps: { 'aria-label': 'Size switch demo' } };
@@ -12,29 +12,11 @@ export const SignUp=()=>{
     <Authlayout>
        <Box className={classes.cont}>
        <Typography className={classes.hdTxt}>
-       Create Account
+       Nice to see you again
        </Typography>
        <Box className={classes.inputCont}>
-       <Box className={classes.input}>
-        <Typography>
-         Email
-        </Typography>
-        <TextField placeholder="Email"/>
-        </Box> 
-    
-      <Box className={classes.input}>
-        <Typography>
-            Password
-        </Typography>
-      <TextField placeholder="Enter password"/>
-      </Box>
-      <Box className={classes.input}>
-        <Typography>
-           Confirm Password
-        </Typography>
-      <TextField placeholder="Confirm password"/>
-      </Box>
-
+       <TextField placeholder="Email or phone number"/>
+       <TextField placeholder="Enter password"/>
        </Box>
        <Box className={classes.remCont}>
        <FormControlLabel control={<Switch {...label} defaultChecked  />} label="Remember me" />
@@ -43,12 +25,12 @@ export const SignUp=()=>{
         </Button>
       </Box>
        <Button variant="contained" className={classes.signBtn}>
-        Sign up
+        Sign in
        </Button>
        <Box className={classes.signUpCont}>
-        <Typography>Already have an account?</Typography>
+        <Typography>Dont have an account?</Typography>
         <Button>
-        Sign in now
+        Sign up now
         </Button>
        </Box>
       </Box>
@@ -73,12 +55,6 @@ const useStyles=makeStyles()((theme)=>({
     flexDirection:'column',
     gap:`${rem(15)}em`
   },
-  input:{
-   display:'flex',
-   flexDirection:'column',
-   gap:`${rem(10)}em`
-  },
-
   remCont:{
     display:'flex',
     flexDirection:"row",

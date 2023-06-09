@@ -30,7 +30,7 @@ export const Authlayout=({children}:props)=>{
 
 const useStyles=makeStyles()((theme)=>({
     cont:{
-        height:`${rem(500)}em`,
+        minHeight:`${rem(500)}em`,
         display:'grid',
         gridTemplateColumns:'2fr 1.5fr',
         marginBottom:`${rem(20)}em`
