@@ -10,7 +10,7 @@ function Header() {
        <Box sx={styles.navCont}> 
         <Avatar src={logo.src} variant="square" sx={{width:100}}/>
      <List component="nav" sx={styles.list}>
-     {['Home','Truck Order','Pricing','About'].map((e:string,i:number)=>{
+     {['Home','Track Order','Pricing','About'].map((e:string,i:number)=>{
         return(
         <ListItemButton
              key={i}
