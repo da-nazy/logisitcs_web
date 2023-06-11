@@ -4,8 +4,10 @@ import { makeStyles } from 'tss-react/mui';
 import { Authlayout } from './layout';
 import {Box,useTheme,Typography,TextField, Button,Switch, FormControlLabel} from '@mui/material';
 import { rem } from '@/utilities';
+import { useRouter } from 'next/navigation';
 export const Signin=()=>{
     const theme=useTheme();
+    const router=useRouter();
     const {classes}=useStyles();
     const label = { inputProps: { 'aria-label': 'Size switch demo' } };
   return (
@@ -29,7 +31,7 @@ export const Signin=()=>{
        </Button>
        <Box className={classes.signUpCont}>
         <Typography>Dont have an account?</Typography>
-        <Button>
+        <Button onClick={()=>router.push('/signup')}>
         Sign up now
         </Button>
        </Box>

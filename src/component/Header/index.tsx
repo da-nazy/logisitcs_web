@@ -3,24 +3,32 @@ import {Box,Button, List, ListItemText,ListItemButton,Avatar} from '@mui/materia
 import logo from '../../asset/image/logo.png'
 import { Button1 } from '../Buttons';
 import { rem } from '@/utilities';
-function Header() {
+import {useRouter} from 'next/navigation';
 
+function Header() {
+const router=useRouter();
+const nav:{name:string,path:string}[]=[
+  {name:"Home",path:'/'},
+  {name:"Track Order",path:"/track"},
+  {name:"Pricing",path:""},
+  {name:"About",path:""}
+]
   return (
     <Box sx={styles.cont}>
        <Box sx={styles.navCont}> 
         <Avatar src={logo.src} variant="square" sx={{width:100}}/>
      <List component="nav" sx={styles.list}>
-     {['Home','Track Order','Pricing','About'].map((e:string,i:number)=>{
+     {nav.map(({name,path},i:number)=>{
         return(
         <ListItemButton
              key={i}
              color='secondary'
              selected={false}
-             onClick={(event)=>console.log('test')}
+             onClick={(event)=>path&&router.push(path)}
          >
            <ListItemText
            
-           primary={e} 
+           primary={name} 
            primaryTypographyProps={{style:{fontWeight:true?700:400}}} />
          </ListItemButton>
         )
@@ -28,7 +36,9 @@ function Header() {
             
           
       </List>
-      <Button1 name="Login|Register"/>
+      <Button1 name="Login|Register" 
+       action={()=>router.push('/signin')}
+      />
        </Box>
     </Box>
   )
