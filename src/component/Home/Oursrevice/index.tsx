@@ -55,7 +55,7 @@ export default function Ourservice() {
                     <CircleIcon fontSize="small" sx={styles.dotIcon}/>
                   
                   <ListItemText
-                    primary="Accesories"
+                    primary="Accessories"
                   />
                 </ListItem>
                 </List>
